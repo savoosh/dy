@@ -1,0 +1,405 @@
+\documentclass[a4paper]{article}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\usepackage{amsmath}
+
+\title{Лабораторная работа №2}
+\author{Заговальский Глеб}
+\date{Май 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Вариант 1 \newline 1) Указать тип и метод интегрирования ур-ий}
+\subsection*{a)}
+\begin{equation*}
+(2xy^2+3x^2+\frac{1}{x^2}+\frac{3x^2}{y^2}) dx+(2x^2y+3y^2+\frac{1}{y^2}-\frac{2x^3}{y^3}) dy = 0
+\end{equation*}
+\subsubsection*{Тип: уранение в полных дифференциалах}
+
+\begin{equation*}
+\frac{\partial P}{\partial y}=4xy-\frac{6x^2}{y^3}
+\end{equation*}
+\begin{equation*}
+\frac{\partial Q}{\partial x}=4xy-\frac{6x^2}{y^3}
+\end{equation*}
+\begin{equation*}
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}
+\end{equation*}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+\int_{x_0}^{x}\left(2xy^2+3x^2+\frac{1}{x^2}+\frac{3x^2}{y^2}\right)dx+\int_{y_0}^{y}\left(2x_0^2y+3y^2+\frac{1}{y^2}-\frac{2x_0^3}{y^3}\right)dy=u(x,y)
+\end{equation*}
+
+\subsection*{б)}
+\begin{equation*}
+xy(1+y^2)dx} + (1+x^2)dy = 0
+\end{equation*}
+\subsubsection*{Тип: уранение с разделяющимися переменными}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+\int \frac{xdx}{1+x^2}=-\int \frac{dy}{y(1+y^2)}
+\end{equation*}
+
+\subsection*{в)}
+\begin{equation*}
+2xy dx} - (x^2 - y^2)dy = 0
+\end{equation*}
+\subsubsection*{Тип: однородное уранение}
+
+\subsubsection*{Метод:}
+замена перемнных
+\begin{gather*}
+\begin{cases}
+\frac{y}{x}=u \\
+x=x
+\end{cases}\\
+y=ux \\
+dy=xdu+udx
+\end{gather*}
+
+\begin{gather*}
+2x^2udx-(x^2-u^2x^2)(xdu+udx)=0 \\
+2x^2udx-x^3du-x^2udx+u^2x^3du+u^3x^2dx=0 \\
+(x^2u+u^3x^2)dx+(-x^3+u^2x^3)du=0 \quad |:x^2 \\
+x'(u+u^3)+x(-1+u^2)=0
+\end{gather*}
+
+Получили линейное по x
+
+\begin{gather*}
+\frac{dx}{du}(u+u^3)+x(-1+u^2)=0\\
+\int\frac{dx}{du}=-\int\frac{(u^2-1)du}{u+u^3}
+\end{gather*}
+
+\subsection*{г)}
+\begin{equation*}
+y^, ctg(x) - y = 2 cos^2(x) ctg(x)
+\end{equation*}
+\subsubsection*{Тип: линейное по у уранение }
+
+\subsubsection*{Метод:}
+метод Лагранжна
+
+\subsection*{д)}
+\begin{equation*}
+x^2y^2y^, + xy^3 = a^2
+\end{equation*}
+\subsubsection*{Тип: уранение Бернули по y}
+
+\subsubsection*{Метод:}
+замена переменных
+\begin{gather*}
+u=y^3\\
+du=3y^2dy
+\end{gather*}
+
+\subsection*{е)}
+\begin{equation*}
+y^, = 4y^2 - 4x^2y + x^4 + x + 4
+\end{equation*}
+\subsubsection*{Тип: уранение Рикатти}
+
+\subsubsection*{Метод:}
+не решается в общем случае
+
+\subsection*{ж)}
+\begin{equation*}
+y x^, - 2x + y^2 = 0
+\end{equation*}
+\subsubsection*{Тип: линейное по x уравнение }
+
+\subsubsection*{Метод:}
+метод Лагранжа
+
+\section*{Вариант 1 \newline 2) Проинтегрировать ур-ие, установив вид интегрирующего множителя}
+\begin{equation*}
+(x^3+x^3\ln{x}+2y)dx+(3y^2x^3-x)dy=0
+\end{equation*}
+\begin{equation*}
+\Psi(y): \quad \frac{Q'_x-P'_y}{P}=
+\frac{9x^2y^2-3}{x^3+x^3\ln(x)+2y}=f(x,y) \Rightarrow \Psi\neq\Psi(y)
+\end{equation*}
+\begin{equation*}
+\Psi(x): \quad \frac{P'_y-Q'_x}{Q}=
+\frac{3-9x^2y^2}{3x^3y^2-x}=
+\frac{3(1-3x^2y^2)}{-x(1-3x^2y^2)}=-\frac{3}{x}
+\Rightarrow \Psi=\Psi(x)
+\end{equation*}
+\begin{equation*}
+\mu(x)=e^{\int\Psi(x)dx}=e^{-\int\frac{3}{x}dx}=e^{-3\ln x}=x^{-3}
+\end{equation*}
+\begin{equation}
+\left(1+\ln(x)+\frac{2y}{x^3}\right)dx+\left(3y^2+-\frac{1}{x^2}\right)dy=0 \label{pd},\quad x\neq0
+\end{equation}
+\begin{equation*}
+\frac{\partial P_1}{\partial y}=\frac{\partial Q_1}{\partial x}=\frac{2}{x^3}
+\end{equation*}
+(\ref{pd}) - уравнение в полнных дифференциалах
+\begin{equation*}
+\frac{\partial u}{\partial x} = 1+\ln x+\frac{2y}{x^3}
+\end{equation*}
+\begin{equation*}
+u(x,y)= \int \left(1+\ln x+\frac{2y}{x^3}\right)dx
+\end{equation*}
+\begin{equation*}
+u(x,y)= x\ln x-\frac{y}{x^2}+c(y)
+\end{equation*}
+\begin{equation*}
+\frac{\partial u}{\partial y} = -\frac{1}{x^2}+c'(y)
+\end{equation*}
+\begin{equation*}
+c'(y)=3y^2
+\end{equation*}
+\begin{equation*}
+c(y)=y^3
+\end{equation*}
+\begin{equation*}
+c=x\ln x-\frac{y}{x^2}+y^3
+\end{equation*}
+\begin{equation*}
+x=0 \Rightarrow u'_xdx+u'_ydy=0 \Rightarrow x=0\text{ - решение.}
+\end{equation*}
+Ответ: $c=x\ln x-\frac{y}{x^2}+y^3$,
+$x=0$.
+
+\section*{Вариант 1 \newline 3) Преобразовать уравнение с помощью подстановки, указать тип и метод интегрирования полученного ур-ия}
+\begin{equation*}
+y(x+\ln y)+(x-\ln y)y'=0 \quad \ln y = \eta \quad d\eta=\frac{dy}{y}
+\end{equation*}
+\begin{equation*}
+\frac{dy}{d\eta}(x+\eta)+(x-\eta)\frac{dy}{dx}=0 \quad |:dy
+\end{equation*}
+\begin{equation*}
+(x+\eta)dx+(x-\eta)d\eta=0
+\end{equation*}
+\begin{equation*}
+\frac{\partial P}{\partial \eta}=\frac{\partial Q}{\partial x}=1 \Rightarrow \text{уравнение в полных дифференциалах}
+\end{equation*}
+метод решения:
+\begin{equation*}
+\int_{x_0}^{x}(x+\eta)dx+\int_{\eta_0}^{\eta}(x-\eta)d\eta=u(x,y)
+\end{equation*}
+\begin{equation*}
+\frac{x^2}{2}+x\eta-\frac{\eta^2}{2}=c
+\end{equation*}
+\begin{equation*}
+\frac{x^2}{2}+x\ln y-\frac{\ln^2{y}}{2}=c
+\end{equation*}
+Ответ:$\frac{x^2}{2}+x\ln y-\frac{\ln^2{y}}{2}=c$
+\section*{Вариант 1 \newline 4) Решить задачу Коши}
+\begin{equation*}
+dy=(y-2)^{\frac{2}{3}}dx,\quad y|_{x=1}=2
+\end{equation*}
+\begin{equation*}
+d(y-2)(y-2)^{-\frac{2}{3}}=dx, \quad y-2=t
+\end{equation*}
+\begin{equation*}
+\int t^{-\frac{2}{3}}dt=\int dx
+\end{equation*}
+\begin{equation*}
+3t^{\frac{1}{3}}=x+c
+\end{equation*}
+\begin{equation*}
+3(y-2)^{\frac{1}{3}}=x+c
+\end{equation*}
+\begin{equation*}
+0=1+c \Rightarrow c=-1
+\end{equation*}
+\begin{equation*}
+3(y-2)^{\frac{1}{3}}=x-1
+\end{equation*}
+Ответ: $3(y-2)^{\frac{1}{3}}=x-1$.
+
+\section*{Вариант 2 \newline 1) Указать тип и метод интегрирования ур-ий}
+\subsection*{a)}
+\begin{equation*}
+xy(1 + y^2)dx - (1 + x^2)dy = 0
+\end{equation*}
+\subsubsection*{Тип: уранение с разделяющимися переменными}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+\frac{x}{1 + x^2}dx - \frac{1}{y(1+y^2)}dy = 0
+\end{equation*}
+
+\subsection*{б)}
+\begin{equation*}
+\frac{(x)^2}{(x - y)^2}dy - \frac{(y)^2}{(x - y)^2}dx = 0
+\end{equation*}
+\subsubsection*{Тип: однородное уравнение степени 0}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+\frac{x^2dy - y^2dx}{(x - y)^2} = 0
+\end{equation*}
+\begin{equation*}
+\frac{(tx)^2}{(tx - ty)^2}dy - \frac{(ty)^2}{(tx - ty)^2}dx = 0
+\end{equation*}
+\begin{equation*}
+\frac{t^2x^2}{t^2(x - y)^2}dy - \frac{t^2y^2}{(x - y)^2t^2}dx = 0
+\end{equation*}
+
+\subsection*{в)}
+\begin{equation*}
+(x^2+ y^2)dx - 2xy = 0
+\end{equation*}
+\subsubsection*{Тип: однородное уравнение степени 2}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+(x^2+ y^2)dx - 2xy = 0
+\end{equation*}
+\begin{equation*}
+((xt)^2+ (yt)^2)dx - 2(tx)(ty) = 0
+\end{equation*}
+
+\subsection*{г)}
+\begin{equation*}
+(4 - x^2)y^, + xy = 4
+\end{equation*}
+\subsubsection*{Тип: линейное по y уравнение}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+y' + \frac{x}{4 - x^2}y = 4
+\end{equation*}
+
+\subsection*{д)}
+\begin{equation*}
+y' tg(x) + 2y tg(x)^2 = a y^2
+\end{equation*}
+\subsubsection*{Тип: уравнение Бернули}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+y'\tg(x) + 2y\tg(x)^2 = a y^2
+\end{equation*}
+
+\subsection*{е)}
+\begin{equation*}
+x y' = x^2 y^2 - y + 1
+\end{equation*}
+\subsubsection*{Тип: уравнение Риккати}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+y' + \frac{1}{x}y = xy^2 + \frac{1}{x}
+\end{equation*}
+
+\subsection*{ж)}
+\begin{equation*}
+dx + (x + y^2)dy = 0
+\end{equation*}
+\subsubsection*{Тип: линейное по x}
+
+\subsubsection*{Метод:}
+\begin{equation*}
+x' + x = -y^2
+\end{equation*}
+
+\section*{Вариант 2 \newline 2) Проинтегрировать ур-ие, установив вид интегрирующего множителя}
+
+\begin{equation*}
+y^2(x - y)dx + (1 - xy^2)dy = 0
+\end{equation*}
+
+\begin{equation*}
+\int{y^2(x - y)dx} + \int{(1 - xy^2)dy} = C
+\end{equation*}
+
+\begin{equation*}
+x^2 - 2xy - \frac{2}{y} = C
+\end{equation*}
+
+\begin{equation*}
+y = 0
+\end{equation*}
+
+\begin{equation*}
+\mu = \mu(y): \frac{Q'_x - P'_y}{P} = \frac{-y^2 - (2xy - 3y^2)}{y^2(x - y)}
+\end{equation*}
+
+\begin{equation*}
+\mu = \mu(x): \frac{P'_y - Q'_x}{Q} = \frac{2xy - 3y^2 - y^2}{1 - xy^2} = \frac{2y(x - 2y)}{1 - xy^2}
+\end{equation*}
+
+\begin{equation*}
+\mu' = \frac{2}{y^2}\mu
+\end{equation*}
+
+\begin{equation*}
+\frac{d\mu}{\mu} = - \frac{2dy}{y^2}
+\end{equation*}
+
+\begin{equation*}
+\ln{\mu} =
+\ln{y^{-2}}
+\end{equation*}
+
+\begin{equation*}
+\mu = y^{-2}
+\end{equation*}
+
+Ответ: $ x^2 - 2xy - \frac{2}{y} = C, y = 0$
+
+\section*{Вариант 2 \newline 3) Преобразовать уравнение с помощью подстановки, указать тип и метод интегрирования полученного ур-ия}
+
+\begin{equation*}
+y' = x + e^{x + 2y}
+\end{equation*}
+
+\begin{equation*}
+\eta = e^{-2y}
+\end{equation*}
+
+\begin{equation*}
+d\eta = -2e^{-2y}dy
+\end{equation*}
+
+\begin{equation*}
+\frac{dy}{dx} = x + e^{x + 2y}
+\end{equation*}
+
+\begin{equation*}
+e^{-2y}dy = (xe^{-2y} + e^x)dx
+\end{equation*}
+
+\begin{equation*}
+-\frac{1}{2}d\eta = (x\eta + e^x)dx
+\end{equation*}
+
+\begin{equation*}
+\eta' + 2x\eta = -2e^x \text{ - линейное по } \eta
+\end{equation*}
+
+Ответ: $\eta' + 2x\eta + ae^x = 0$
+
+\section*{Вариант 2 \newline 4) Решить задачу Коши}
+
+\begin{equation*}
+dy = x\sqrt{y} dx,y|_{x=1} = 0
+\end{equation*}
+
+\begin{equation*}
+xdx = \frac{dy}{\sqrt{y}}
+\end{equation*}
+
+\begin{equation*}
+\frac{x^2}{2} = 2\sqrt{y} + C
+\end{equation*}
+
+\begin{equation*}
+C = \frac{1}{2}
+\end{equation*}
+
+\begin{equation*}
+x^2 - 4\sqrt{y} = 1
+\end{equation*}
+
+Ответ: $x^2 - 4\sqrt{y} = 1$
+
+\end{document}
